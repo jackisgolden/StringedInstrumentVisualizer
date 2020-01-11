@@ -18,12 +18,14 @@ public class Process extends PApplet {
 	int[] ukeN = {3, 9, 0, 5};
 	int[] instrument = guitarN;
 
-	void setup(){
-	  size(1000, 500);
+	public void settings() {
+		size(1000,500);
+	}
+	public void setup(){
 	    renderBoard();
 	}
 
-	void draw(){
+	public void draw(){
 	  renderNotes();
 	  
 	}
@@ -43,7 +45,7 @@ public class Process extends PApplet {
 	    for(int fret = 0; fret < 17; fret++)
 	        for(int i = 0; i < scale.length; i++) {
 	          if(scale[i]==(guitarN[string] + fret) % 12 ) {
-	                circle();
+	                //circle();
 	              break;
 	        }
 	    }
