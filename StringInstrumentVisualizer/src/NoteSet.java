@@ -18,6 +18,13 @@ public class NoteSet {
 	public int get(int i) {
 		return notes[i];
 	}
+	
+	public boolean containsNote(int i){
+		for(int u : notes)
+			if(i == u)
+				return true;
+		return false;
+	}
 
 	public String toString() {
 		return name;
