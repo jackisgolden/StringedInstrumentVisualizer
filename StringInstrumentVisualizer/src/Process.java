@@ -10,7 +10,7 @@ public class Process extends PApplet {
 	NoteSet minorScale = new NoteSet({ 0, 2, 3, 5, 7, 8, 10 }, "Minor Scale");
 	int[] majorScale = { 0, 2, 4, 5, 7, 9, 11 };
 	int[] minorPent = { 0, 3, 5, 7, 10 };
-	int[] majorPent = { 0, 2, 5, 7, 9 }; // these are rootless shapes. shift to align with different roots on guitar.
+	int[] majorPent = { 0, 2, 5, 7, 9 }; // these are rootless shapes. shift to align with different roots on guitar..
 	int[] majorChord = { 0, 4, 7 };
 	int[] minorChord = { 0, 3, 7 };
 	int[] root = { 0 };
