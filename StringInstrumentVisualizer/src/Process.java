@@ -31,8 +31,7 @@ public class Process extends PApplet {
 
 	public void settings() {
 		size(1200, 600);
-		background(255);
-
+		background(0);
 		nFrets = 17;
 		startpointx = width / 8;
 		startpointy = height / 4;
@@ -51,6 +50,8 @@ public class Process extends PApplet {
 	}
 
 	public void renderStrings() {
+		fill(255);
+		stroke(255);
 		for (int string = 0; string < instrument.length; string++) {
 			int ycord = startpointy + string * lengthy / (instrument.length - 1);
 			line(startpointx, ycord, startpointx + lengthx, ycord);
@@ -72,7 +73,7 @@ public class Process extends PApplet {
 		for (int u : markings) {
 			int xcord = startpointx + u * lengthx / (nFrets - 1) + lengthx / (nFrets * 2);
 			noStroke();
-			fill(255, 251, 150);
+			fill(255);
 			ellipse(xcord, ycord, 5, 20);
 		}
 		stroke(1);
@@ -80,7 +81,7 @@ public class Process extends PApplet {
 
 	public void renderText() {
 		textAlign(CENTER, CENTER);
-		fill(0);
+		fill(255);
 		textSize(20);
 		for (int string = 0; string < instrument.length; string++) {
 			int ycord = startpointy + string * lengthy / (instrument.length - 1);
@@ -90,7 +91,7 @@ public class Process extends PApplet {
 		text("Instrument: " + instrumName, 100, 20);
 
 		textSize(40);
-		text(scaleName, width / 2, height / 8);
+		text(allNotes[0] + " " + scaleName, width / 2, height / 8);
 	}
 
 	public void renderNotes() {
