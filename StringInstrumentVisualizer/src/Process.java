@@ -32,7 +32,12 @@ public class Process extends PApplet {
 
 	public void settings() {
 		size(1200, 600);
+<<<<<<< HEAD
 		background(0);
+=======
+		
+
+>>>>>>> branch 'master' of https://github.com/jackisgolden/StringedInstrumentVisualizer
 		nFrets = 17;
 		startpointx = width / 12;
 		startpointy = height / 4;
@@ -42,6 +47,7 @@ public class Process extends PApplet {
 	}
 
 	public void setup() {
+		background(255);
 		renderStrings();
 		renderText();
 	}
