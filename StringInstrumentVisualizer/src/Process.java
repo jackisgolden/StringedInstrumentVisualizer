@@ -101,7 +101,9 @@ public class Process extends PApplet {
 						int xcord = startpointx + fret * lengthx / (nFrets - 1) + lengthx / (nFrets * 2);
 						int ycord = startpointy + string * lengthy / (instrument.length - 1);
 
-						if (xcord < mouseX + 2 * lengthx / 17 && xcord > mouseX - 3 * lengthx / 17)
+						if (xcord < mouseX + 2 * lengthx / 17 && xcord > mouseX - 3 * lengthx / 17
+								&& mouseY < startpointy + lengthy && mouseY > startpointy) // mouse must be inside fret
+																							// board
 							fill(0, 255, 0);
 						if ((fret + guitarN[string]) % 12 == 0)
 							fill(255, 0, 0);
