@@ -31,7 +31,7 @@ public class Process extends PApplet {
 
 	public void settings() {
 		size(1200, 600);
-		background(255);
+		
 
 		nFrets = 17;
 		startpointx = width / 8;
@@ -42,6 +42,7 @@ public class Process extends PApplet {
 	}
 
 	public void setup() {
+		background(255);
 		renderStrings();
 		renderText();
 	}
