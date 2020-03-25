@@ -102,7 +102,7 @@ public class Process extends PApplet {
 			line(xcord, startpointy, xcord, startpointy + lengthy);
 		}
 
-		int[] markings = { 0, 5, 7, 9, 12 };
+		int[] markings = { 3, 5, 7, 9, 12, 15, 17 };
 		int ycord = startpointy + lengthy / 2;
 		for (int u : markings) {
 			int xcord = startpointx + u * lengthx / (nFrets - 1) + lengthx / (nFrets * 2);
@@ -114,24 +114,24 @@ public class Process extends PApplet {
 	}
 
 	public void renderText() {
-		textAlign(CENTER, CENTER);
-		fill(255);
-		textSize(20);
-		for (int string = 0; string < instruments[instrument].getLength(); string++) {
-			int ycord = startpointy + string * lengthy / (instruments[instrument].getLength() - 1);
-			text(allNotes[instruments[instrument].get(string)], startpointx - 25, ycord);
-		}
-		textSize(20);
-		text("Instrument: " + instruments[instrument], 100, 20);
+	    textAlign(CENTER, CENTER);
+	    fill(255);
+	    textSize(20);
+	    for (int string = 0; string < instruments[instrument].getLength(); string++) {
+	      int ycord = startpointy + string * lengthy / (instruments[instrument].getLength() - 1);
+	      text(allNotes[instruments[instrument].get(string)], startpointx - 40, ycord);
+	    }
+	    textSize(20);
+	    text("Instrument: " + instruments[instrument], 100, 20);
 
-		textSize(40);
-		text(allNotes[keyRoot] + " " + scales[scale], width / 2, height / 8);
+	    textSize(40);
+	    text(allNotes[(12 - keyRoot) % 12] + " " + scales[scale], width / 2, height / 8);
 	}
 
 	public void renderNotes() {
 		for (int string = 0; string < instruments[instrument].getLength(); string++) // note is given by (fret +
 																						// stringNote + keyRoot) % 12
-			for (int fret = 0; fret < nFrets - 1; fret++)
+			for (int fret = 0; fret < nFrets; fret++)
 				if (scales[scale].containsNote((instruments[instrument].get(string) + fret + keyRoot) % 12)) {
 					int xcord = startpointx + fret * lengthx / (nFrets - 1) + lengthx / (nFrets * 2);
 					int ycord = startpointy + string * lengthy / (instruments[instrument].getLength() - 1);
